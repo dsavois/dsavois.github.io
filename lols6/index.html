@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>lols6天赋加点图 - 英雄联盟S6赛季天赋树加点思路与查阅指南</title>
+<meta name="description" content="整理英雄联盟S6赛季天赋加点图相关内容，说明凶猛、诡诈、坚决三系天赋的加点思路、常见英雄点法参考与查阅方式，帮助玩家快速理解S6天赋系统。">
+<meta name="keywords" content="lols6天赋加点图,S6天赋加点,英雄联盟S6天赋,天赋树加点,凶猛诡诈坚决">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --bg:#0d1117;
+    --bg-soft:#151b24;
+    --panel:#1b2330;
+    --panel-2:#222c3c;
+    --line:#2c3849;
+    --gold:#c8a24a;
+    --gold-soft:#e3c477;
+    --blue:#4a9eff;
+    --red:#e05a4f;
+    --green:#4fbf7a;
+    --text:#e6ebf2;
+    --text-dim:#9aa7b8;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",Arial,sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 18px;
+  }
+
+  /* ============ 顶部 ============ */
+  .topbar{
+    background:linear-gradient(90deg,#0a0e14,#141c28 55%,#0a0e14);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    height:64px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink:0;
+  }
+  .brand-mark{
+    width:38px;height:38px;
+    border-radius:9px;
+    background:linear-gradient(135deg,var(--gold),#8a6a1f);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;
+    color:#1a1206;
+    font-size:17px;
+    letter-spacing:.5px;
+  }
+  .brand-txt b{
+    display:block;
+    font-size:17px;
+    letter-spacing:1px;
+    color:var(--gold-soft);
+  }
+  .brand-txt span{
+    display:block;
+    font-size:11px;
+    color:var(--text-dim);
+    letter-spacing:2px;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    flex-wrap:wrap;
+  }
+  .nav a{
+    padding:8px 13px;
+    font-size:14.5px;
+    color:var(--text-dim);
+    border-radius:8px;
+    transition:.18s;
+    white-space:nowrap;
+  }
+  .nav a:hover,.nav a.active{
+    color:var(--gold-soft);
+    background:rgba(200,162,74,.12);
+  }
+
+  /* ============ 首屏 ============ */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(900px 340px at 12% 0%,rgba(74,158,255,.16),transparent 62%),
+      radial-gradient(760px 320px at 88% 10%,rgba(200,162,74,.18),transparent 60%),
+      linear-gradient(180deg,#101722,#0d1117);
+    border-bottom:1px solid var(--line);
+    padding:52px 0 46px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:auto -10% -60% -10%;
+    height:220px;
+    background:radial-gradient(closest-side,rgba(200,162,74,.10),transparent);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.35fr 1fr;
+    gap:38px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  .hero-tag{
+    display:inline-block;
+    font-size:12.5px;
+    letter-spacing:2px;
+    color:var(--gold-soft);
+    border:1px solid rgba(200,162,74,.45);
+    border-radius:999px;
+    padding:4px 14px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:33px;
+    line-height:1.35;
+    letter-spacing:.5px;
+    margin-bottom:16px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold-soft);
+  }
+  .hero p.lead{
+    color:var(--text-dim);
+    font-size:15.5px;
+    max-width:640px;
+    margin-bottom:26px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:11px 24px;
+    border-radius:9px;
+    font-size:15px;
+    font-weight:600;
+    transition:.2s;
+    border:1px solid transparent;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg,var(--gold),#a8842f);
+    color:#1a1206;
+  }
+  .btn-gold:hover{filter:brightness(1.1);transform:translateY(-1px);}
+  .btn-ghost{
+    border-color:var(--line);
+    color:var(--text-dim);
+    background:rgba(255,255,255,.02);
+  }
+  .btn-ghost:hover{color:var(--gold-soft);border-color:rgba(200,162,74,.5);}
+
+  /* 首屏天赋树示意 */
+  .tree-card{
+    background:linear-gradient(180deg,var(--panel),#141b26);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 18px;
+    box-shadow:0 18px 40px rgba(0,0,0,.4);
+  }
+  .tree-card h3{
+    font-size:14px;
+    letter-spacing:1.5px;
+    color:var(--text-dim);
+    font-weight:500;
+    margin-bottom:14px;
+    text-align:center;
+  }
+  .tree-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:9px 10px;
+    border-radius:8px;
+    background:rgba(255,255,255,.025);
+    margin-bottom:8px;
+    font-size:13.5px;
+  }
+  .tree-row .dot{
+    width:10px;height:10px;border-radius:50%;
+    flex-shrink:0;
+  }
+  .dot-red{background:var(--red);box-shadow:0 0 8px rgba(224,90,79,.7);}
+  .dot-blue{background:var(--blue);box-shadow:0 0 8px rgba(74,158,255,.7);}
+  .dot-green{background:var(--green);box-shadow:0 0 8px rgba(79,191,122,.7);}
+  .tree-row .name{flex:1;color:var(--text);}
+  .tree-row .val{color:var(--gold-soft);font-weight:700;font-size:13px;}
+  .tree-note{
+    font-size:12.5px;
+    color:var(--text-dim);
+    text-align:center;
+    margin-top:12px;
+    line-height:1.6;
+  }
+
+  /* ============ 通用区块 ============ */
+  section.block{padding:54px 0;}
+  .sec-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:18px;
+    margin-bottom:28px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+    flex-wrap:wrap;
+  }
+  .sec-head h2{
+    font-size:23px;
+    letter-spacing:.5px;
+    position:relative;
+    padding-left:14px;
+  }
+  .sec-head h2::before{
+    content:"";
+    position:absolute;
+    left:0;top:6px;bottom:6px;
+    width:4px;
+    border-radius:3px;
+    background:linear-gradient(180deg,var(--gold),#7d611d);
+  }
+  .sec-head p{
+    color:var(--text-dim);
+    font-size:14px;
+    max-width:520px;
+  }
+
+  /* 三系天赋概览 */
+  .branch-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .branch{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+    position:relative;
+    overflow:hidden;
+    transition:.2s;
+  }
+  .branch:hover{transform:translateY(-3px);border-color:rgba(200,162,74,.4);}
+  .branch::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+  }
+  .branch.red::before{background:linear-gradient(90deg,var(--red),transparent);}
+  .branch.blue::before{background:linear-gradient(90deg,var(--blue),transparent);}
+  .branch.green::before{background:linear-gradient(90deg,var(--green),transparent);}
+  .branch h3{
+    font-size:18px;
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .branch h3 i{
+    width:11px;height:11px;border-radius:50%;
+    display:inline-block;
+    font-style:normal;
+  }
+  .branch.red h3 i{background:var(--red);}
+  .branch.blue h3 i{background:var(--blue);}
+  .branch.green h3 i{background:var(--green);}
+  .branch .sub{
+    font-size:12.5px;
+    color:var(--text-dim);
+    letter-spacing:1px;
+    margin-bottom:14px;
+  }
+  .branch ul{
+    list-style:none;
+    font-size:14px;
+    color:var(--text-dim);
+  }
+  .branch ul li{
+    padding:6px 0 6px 16px;
+    position:relative;
+    line-height:1.65;
+  }
+  .branch ul li::before{
+    content:"";
+    position:absolute;
+    left:0;top:14px;
+    width:6px;height:6px;
+    border-radius:2px;
+    background:var(--gold);
+    opacity:.7;
+  }
+  .branch .pick{
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px dashed var(--line);
+    font-size:13px;
+    color:var(--gold-soft);
+  }
+
+  /* 加点图表格 */
+  .table-wrap{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .table-scroll{overflow-x:auto;}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:720px;
+    font-size:14px;
+  }
+  thead th{
+    background:var(--panel-2);
+    color:var(--gold-soft);
+    text-align:left;
+    padding:14px 16px;
+    font-weight:600;
+    letter-spacing:.5px;
+    white-space:nowrap;
+    border-bottom:1px solid var(--line);
+  }
+  tbody td{
+    padding:13px 16px;
+    border-bottom:1px solid rgba(44,56,73,.6);
+    color:var(--text-dim);
+    vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover td{background:rgba(200,162,74,.05);}
+  tbody td strong{color:var(--text);font-weight:600;}
+  .tag{
+    display:inline-block;
+    font-size:12px;
+    padding:2px 9px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    color:var(--text-dim);
+    margin:0 4px 4px 0;
+    white-space:nowrap;
+  }
+  .tag.r{color:#f09189;border-color:rgba(224,90,79,.45);}
+  .tag.b{color:#8fc4ff;border-color:rgba(74,158,255,.45);}
+  .tag.g{color:#8fdfae;border-color:rgba(79,191,122,.45);}
+
+  /* 加点步骤 */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+  }
+  .step{
+    background:linear-gradient(180deg,var(--panel),#161d29);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px;
+  }
+  .step .num{
+    font-size:26px;
+    font-weight:800;
+    color:rgba(200,162,74,.35);
+    line-height:1;
+    margin-bottom:10px;
+    letter-spacing:1px;
+  }
+  .step h3{font-size:16.5px;margin-bottom:8px;}
+  .step p{font-size:14px;color:var(--text-dim);}
+
+  /* 双栏内容 */
+  .two-col{
+    display:grid;
+    grid-template-columns:1.6fr 1fr;
+    gap:28px;
+    align-items:start;
+  }
+  .article-box{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 24px;
+  }
+  .article-box h3{
+    font-size:18px;
+    margin:22px 0 10px;
+    color:var(--gold-soft);
+  }
+  .article-box h3:first-child{margin-top:0;}
+  .article-box p{
+    font-size:14.5px;
+    color:var(--text-dim);
+    margin-bottom:12px;
+  }
+  .article-box ul{
+    margin:0 0 14px 0;
+    padding-left:0;
+    list-style:none;
+  }
+  .article-box ul li{
+    font-size:14.5px;
+    color:var(--text-dim);
+    padding:5px 0 5px 20px;
+    position:relative;
+  }
+  .article-box ul li::before{
+    content:"▸";
+    position:absolute;
+    left:2px;
+    color:var(--gold);
+  }
+
+  .side-box{
+    background:linear-gradient(180deg,var(--panel),#151c26);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+    margin-bottom:20px;
+  }
+  .side-box h3{
+    font-size:16px;
+    margin-bottom:14px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+    color:var(--gold-soft);
+  }
+  .side-list{list-style:none;font-size:14px;}
+  .side-list li{
+    padding:9px 0;
+    border-bottom:1px dashed rgba(44,56,73,.7);
+    color:var(--text-dim);
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .side-list li:last-child{border-bottom:none;}
+  .side-list .idx{
+    color:var(--gold);
+    font-weight:700;
+    font-size:13px;
+    flex-shrink:0;
+    min-width:18px;
+  }
+  .side-list b{color:var(--text);font-weight:600;}
+
+  /* 提示条 */
+  .notice{
+    background:rgba(74,158,255,.08);
+    border:1px solid rgba(74,158,255,.3);
+    border-left:3px solid var(--blue);
+    border-radius:8px;
+    padding:14px 18px;
+    font-size:14px;
+    color:#bcd6f5;
+    margin-bottom:20px;
+  }
+  .notice strong{color:#dce9fb;}
+
+  /* FAQ */
+  .faq-list{
+    display:grid;
+    gap:12px;
+  }
+  details.faq{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:0 20px;
+    transition:.2s;
+  }
+  details.faq[open]{
+    border-color:rgba(200,162,74,.4);
+    background:linear-gradient(180deg,var(--panel),#171f2b);
+  }
+  details.faq summary{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 0;
+    font-size:15.5px;
+    font-weight:600;
+    color:var(--text);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+  }
+  details.faq summary::-webkit-details-marker{display:none;}
+  details.faq summary::after{
+    content:"+";
+    color:var(--gold);
+    font-size:20px;
+    font-weight:400;
+    line-height:1;
+    flex-shrink:0;
+    transition:.2s;
+  }
+  details.faq[open] summary::after{content:"−";}
+  details.faq .ans{
+    padding:0 0 18px;
+    font-size:14.5px;
+    color:var(--text-dim);
+    border-top:1px solid rgba(44,56,73,.6);
+    padding-top:14px;
+  }
+
+  /* 页脚 */
+  footer{
+    background:#0a0e14;
+    border-top:1px solid var(--line);
+    padding:40px 0 26px;
+    margin-top:20px;
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:30px;
+    margin-bottom:28px;
+  }
+  .foot-grid h4{
+    font-size:15px;
+    color:var(--gold-soft);
+    margin-bottom:14px;
+    letter-spacing:.5px;
+  }
+  .foot-grid p{
+    font-size:13.5px;
+    color:var(--text-dim);
+    line-height:1.8;
+  }
+  .foot-links{list-style:none;font-size:13.5px;}
+  .foot-links li{margin-bottom:9px;}
+  .foot-links a{color:var(--text-dim);transition:.18s;}
+  .foot-links a:hover{color:var(--gold-soft);}
+  .foot-bottom{
+    border-top:1px solid var(--line);
+    padding-top:18px;
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+    font-size:12.5px;
+    color:#6c788a;
+  }
+
+  /* 响应式 */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    .branch-grid{grid-template-columns:1fr;}
+    .two-col{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    body{font-size:15px;}
+    .topbar .wrap{height:auto;padding-top:12px;padding-bottom:12px;flex-direction:column;align-items:flex-start;gap:10px;}
+    .nav{gap:2px;}
+    .nav a{padding:6px 9px;font-size:13.5px;}
+    .hero{padding:36px 0 34px;}
+    .hero h1{font-size:24px;}
+    .hero p.lead{font-size:14.5px;}
+    section.block{padding:38px 0;}
+    .sec-head h2{font-size:19px;}
+    .article-box{padding:20px 17px;}
+    .foot-grid{grid-template-columns:1fr;}
+    .foot-bottom{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark">S6</div>
+      <div class="brand-txt">
+        <b>天赋加点图鉴</b>
+        <span>LOL SEASON 6</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#overview" class="active">三系概览</a>
+      <a href="#charts">加点图参考</a>
+      <a href="#howto">加点思路</a>
+      <a href="#notes">注意事项</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag">S6 赛季天赋系统</span>
+        <h1>lols6天赋加点图：<em>三系天赋树</em>加点思路与查阅指南</h1>
+        <p class="lead">
+          S6 赛季把天赋改成了凶猛、诡诈、坚决三系结构，每套天赋最多投入 18 点，加点组合比以往更灵活。
+          这里把三系天赋的作用方向、常见英雄的加点图参考、以及自己动手搭配时该注意的取舍整理在一起，
+          方便你在选人阶段快速确定一套可用的加点方案。
+        </p>
+        <div class="hero-actions">
+          <a href="#charts" class="btn btn-gold">查看加点图参考</a>
+          <a href="#howto" class="btn btn-ghost">了解加点思路</a>
+        </div>
+      </div>
+
+      <div class="tree-card">
+        <h3>三系天赋投入示意</h3>
+        <div class="tree-row">
+          <span class="dot dot-red"></span>
+          <span class="name">凶猛系（输出方向）</span>
+          <span class="val">18 点</span>
+        </div>
+        <div class="tree-row">
+          <span class="dot dot-blue"></span>
+          <span class="name">诡诈系（机动与爆发）</span>
+          <span class="val">12 点</span>
+        </div>
+        <div class="tree-row">
+          <span class="dot dot-green"></span>
+          <span class="name">坚决系（生存与抗压）</span>
+          <span class="val">0 点</span>
+        </div>
+        <p class="tree-note">
+          总点数固定为 30 点，三系可自由分配，<br>
+          图中数值仅为示例分配，实际需按英雄与对线调整。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三系概览 -->
+  <section class="block" id="overview">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>凶猛 / 诡诈 / 坚决：三系天赋各自解决什么问题</h2>
+        <p>理解每一系的核心用途，比死记某一张加点图更重要，因为对手和分路一变，最优加点往往也跟着变。</p>
+      </div>
+
+      <div class="branch-grid">
+        <article class="branch red">
+          <h3><i></i>凶猛系</h3>
+          <p class="sub">输出 · 持续伤害 · 对拼能力</p>
+          <ul>
+            <li>围绕攻击力、法术强度、攻速、穿透等属性展开，偏向提升伤害上限。</li>
+            <li>适合需要持续输出或对拼换血的英雄，例如射手、战士、部分法师。</li>
+            <li>深层天赋通常提供额外的伤害加成或对低血量目标的压制效果。</li>
+            <li>如果对线期就要靠伤害压制对手，凶猛系往往是主投入方向。</li>
+          </ul>
+          <p class="pick">常见定位：主系 18 点</p>
+        </article>
+
+        <article class="branch blue">
+          <h3><i></i>诡诈系</h3>
+          <p class="sub">机动 · 爆发 · 资源效率</p>
+          <ul>
+            <li>提供移速、技能急速相关收益、对线续航与部分爆发增强。</li>
+            <li>刺客、游走型中单、需要频繁支援的英雄常常选择这一系。</li>
+            <li>部分天赋能提升清线、刷野或消耗效率，让节奏更快。</li>
+            <li>与凶猛系搭配时，通常作为副系补充机动与伤害节奏。</li>
+          </ul>
+          <p class="pick">常见定位：主系或副系 12 点</p>
+        </article>
+
+        <article class="branch green">
+          <h3><i></i>坚决系</h3>
+          <p class="sub">生存 · 抗压 · 团战承伤</p>
+          <ul>
+            <li>侧重生命值、护甲魔抗、减伤与回复，提升容错率。</li>
+            <li>坦克、上单抗压位、需要先手开团的英雄会重点考虑。</li>
+            <li>面对高爆发阵容时，适量投入坚决系能明显改善生存环境。</li>
+            <li>辅助与打野也可以用它来换取更强的持续作战能力。</li>
+          </ul>
+          <p class="pick">常见定位：主系 18 点或副系 12 点</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 加点图参考表 -->
+  <section class="block" id="charts">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见定位的 S6 加点图参考</h2>
+        <p>下表按英雄定位给出加点方向与典型分配，属于通用思路，具体点位仍建议结合版本与对线对手微调。</p>
+      </div>
+
+      <div class="table-wrap">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>英雄定位</th>
+                <th>推荐主系</th>
+                <th>典型分配</th>
+                <th>加点侧重</th>
+                <th>适用场景</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>射手 / ADC</strong></td>
+                <td><span class="tag r">凶猛系</span></td>
+                <td>凶猛 18 · 诡诈 12</td>
+                <td>攻击力、攻速、穿透、持续输出</td>
+                <td>常规对线，需要稳定输出与后期伤害</td>
+              </tr>
+              <tr>
+                <td><strong>爆发型中单</strong></td>
+                <td><span class="tag b">诡诈系</span></td>
+                <td>诡诈 18 · 凶猛 12</td>
+                <td>技能伤害、机动性、游走效率</td>
+                <td>依赖技能连招击杀，节奏偏快</td>
+              </tr>
+              <tr>
+                <td><strong>持续输出法师</strong></td>
+                <td><span class="tag r">凶猛系</span></td>
+                <td>凶猛 18 · 诡诈 12</td>
+                <td>法强、技能伤害、消耗能力</td>
+                <td>中远距离消耗，团战持续施法</td>
+              </tr>
+              <tr>
+                <td><strong>上单战士</strong></td>
+                <td><span class="tag r">凶猛系</span></td>
+                <td>凶猛 18 · 坚决 12</td>
+                <td>攻击属性搭配抗压与回复</td>
+                <td>需要兼顾对拼与承受伤害</td>
+              </tr>
+              <tr>
+                <td><strong>坦克上单</strong></td>
+                <td><span class="tag g">坚决系</span></td>
+                <td>坚决 18 · 凶猛 12</td>
+                <td>生命值、减伤、团战承伤</td>
+                <td>先手开团或长时间抗压</td>
+              </tr>
+              <tr>
+                <td><strong>打野</strong></td>
+                <td><span class="tag b">诡诈系</span></td>
+                <td>诡诈 12 · 凶猛 18</td>
+                <td>清野效率、机动支援、伤害</td>
+                <td>需要频繁 gank 与控图</td>
+              </tr>
+              <tr>
+                <td><strong>辅助（保护型）</strong></td>
+                <td><span class="tag g">坚决系</span></td>
+                <td>坚决 18 · 诡诈 12</td>
+                <td>生存、护盾与团队增益</td>
+                <td>以保护射手和团战续航为主</td>
+              </tr>
+              <tr>
+                <td><strong>辅助（消耗型）</strong></td>
+                <td><span class="tag b">诡诈系</span></td>
+                <td>诡诈 18 · 凶猛 12</td>
+                <td>技能消耗、移速、对线压制</td>
+                <td>线上打出优势，配合击杀</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="notice" style="margin-top:20px;">
+        <strong>说明：</strong>表格中的点数分配是 S6 天赋系统下的常见方向，用于帮助理解三系搭配逻辑。
+        不同英雄、不同对线组合以及个人操作习惯都会影响最终选择，建议把它当作起点而不是唯一答案。
+      </div>
+    </div>
+  </section>
+
+  <!-- 加点思路 -->
+  <section class="block" id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>从零搭一套加点图的四个步骤</h2>
+        <p>与其到处找现成图片，不如掌握一套判断顺序，遇到新英雄也能自己配出可用的方案。</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <div class="num">01</div>
+          <h3>先确定英雄的核心需求</h3>
+          <p>问自己一个问题：这个英雄靠什么赢？是靠持续输出、靠一套爆发，还是靠扛住伤害给队友创造空间。答案决定了主系往哪一系倾斜。</p>
+        </article>
+        <article class="step">
+          <div class="num">02</div>
+          <h3>再判断对线环境</h3>
+          <p>面对高爆发对手时，适当从输出系挪几点到坚决系往往比硬堆伤害更实用；面对弱势对手，则可以把点数集中在压制与滚雪球上。</p>
+        </article>
+        <article class="step">
+          <div class="num">03</div>
+          <h3>分配主系与副系点数</h3>
+          <p>S6 常见的做法是主系投满 18 点以解锁深层天赋，剩余 12 点投入副系。少数情况会采用 12/18 或更均衡的分配。</p>
+        </article>
+        <article class="step">
+          <div class="num">04</div>
+          <h3>进游戏后按实际情况微调</h3>
+          <p>加点不是一次定终身。观察对手出装与打法，如果发现对线压力过大或伤害不足，下一局就调整点位方向。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 双栏：详解 + 侧栏 -->
+  <section class="block" id="notes">
+    <div class="wrap two-col">
+      <div class="article-box">
+        <h3>为什么同一张加点图不能照抄</h3>
+        <p>
+          很多玩家搜索加点图，是希望找到一张"抄下来就能用"的图片。但在 S6 的天赋结构下，同一英雄在不同对局里，
+          合理的加点往往并不相同。原因主要有三点：
+        </p>
+        <ul>
+          <li><strong>对手不同：</strong>面对消耗型对手和面对强开型对手，对生存与回复的需求完全不同。</li>
+          <li><strong>分路不同：</strong>同一个英雄走中、走上或打野，资源获取方式和作战节奏差异很大。</li>
+          <li><strong>队伍阵容不同：</strong>队伍缺前排时，个人可能需要牺牲部分输出来补足承伤能力。</li>
+        </ul>
+
+        <h3>查阅加点图时该重点看什么</h3>
+        <p>
+          看到一张加点图，不要只看最终点了哪些格子，更值得关注的是它的整体倾向。可以从三个角度快速判断：
+        </p>
+        <ul>
+          <li>主系是哪一系，说明这套方案认为该英雄最重要的能力是什么。</li>
+          <li>副系投入了哪些方向，通常反映了对线期最需要补足的短板。</li>
+          <li>深层天赋的选择，往往决定了这套加点在团战中的定位。</li>
+        </ul>
+
+        <h3>关于版本差异的提醒</h3>
+        <p>
+          S6 天赋系统与后续赛季的天赋机制并不相同，后续版本对天赋树做过较大调整。
+          如果你现在查阅的是旧赛季资料，需要注意其中的天赋名称与结构可能已经和当前游戏不一致，
+          建议把它当作理解设计思路的参考，而不是直接套用到当前版本。
+        </p>
+
+        <h3>自己记录加点方案的习惯</h3>
+        <p>
+          比较实用的做法是：每局结束后简单记一下自己用了哪套加点、对线是否顺利、团战表现如何。
+          积累十几局之后，你会比任何一张通用加点图更清楚自己适合什么风格。
+        </p>
+      </div>
+
+      <aside>
+        <div class="side-box">
+          <h3>加点时容易忽略的细节</h3>
+          <ul class="side-list">
+            <li><span class="idx">1</span><span><b>点数别浪费：</b>总点数固定，任何一系多点一点，另一系就少一点。</span></li>
+            <li><span class="idx">2</span><span><b>深层天赋优先：</b>主系投满才能解锁最有价值的深层效果。</span></li>
+            <li><span class="idx">3</span><span><b>别只看伤害：</b>移速、回复、减伤在实战中的价值常被低估。</span></li>
+            <li><span class="idx">4</span><span><b>对线期最重要：</b>前期崩盘时，后期天赋再强也难发挥。</span></li>
+            <li><span class="idx">5</span><span><b>保持一致性：</b>加点方向要和出装、打法风格相互配合。</span></li>
+          </ul>
+        </div>
+
+        <div class="side-box">
+          <h3>按需求快速定位</h3>
+          <ul class="side-list">
+            <li><span class="idx">→</span><span>想提升伤害：优先看<b>凶猛系</b>深层点位。</span></li>
+            <li><span class="idx">→</span><span>想更灵活游走：优先看<b>诡诈系</b>机动相关点位。</span></li>
+            <li><span class="idx">→</span><span>想抗住压力：优先看<b>坚决系</b>减伤与回复点位。</span></li>
+            <li><span class="idx">→</span><span>想兼顾两者：采用 18 + 12 的经典分配。</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>关于 S6 天赋加点的常见问题</h2>
+        <p>整理玩家在查阅加点图时最常提出的疑问，帮助你更快判断该看什么、该怎么用。</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq" open>
+          <summary>S6 天赋一共可以点多少点？</summary>
+          <div class="ans">
+            S6 赛季的天赋总点数为 30 点，分布在凶猛、诡诈、坚决三系中。玩家可以自由决定每系投入多少，
+            常见做法是主系 18 点、副系 12 点，但并非强制，具体分配取决于英雄定位与对局需求。
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>为什么看到的加点图分配方式都不太一样？</summary>
+          <div class="ans">
+            因为加点本身没有唯一正确答案。不同玩家会根据英雄定位、对线对手、队伍阵容甚至个人操作习惯做调整，
+            所以同一英雄出现多套加点方案是正常现象。重点看方案的思路，而不是机械复制具体点位。
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>主系一定要点满 18 点吗？</summary>
+          <div class="ans">
+            多数情况下会这样做，因为主系深层天赋通常收益较高，点满才能解锁。但也存在特殊情况，
+            例如需要兼顾生存与输出时，会采用更均衡的分配方式。是否点满，取决于你更看重哪一系的核心效果。
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>新手应该先学哪一系的加点？</summary>
+          <div class="ans">
+            建议先从自己常玩英雄的主要定位入手。如果你常玩射手或持续输出型英雄，可以先熟悉凶猛系；
+            如果常玩刺客或游走型英雄，可以先了解诡诈系；如果常玩坦克或辅助，则优先掌握坚决系。
+            熟悉一系之后再逐步理解三系之间的搭配关系。
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>旧赛季的加点图现在还能直接用吗？</summary>
+          <div class="ans">
+            不建议直接照搬。后续版本对天赋系统做过结构性调整，天赋名称、层级与效果都可能发生变化。
+            旧资料更适合用来理解设计思路和取舍逻辑，实际加点请以当前游戏内的天赋说明为准。
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>加点方向需要和出装保持一致吗？</summary>
+          <div class="ans">
+            需要。加点、出装和打法风格三者最好相互配合。例如加点偏向持续输出，出装却全部选择防御装，
+            整体强度就会打折扣。反过来，如果加点偏生存，出装也应适当补充输出或功能性装备。
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>关于本站</h4>
+        <p>
+          本站围绕英雄联盟 S6 赛季天赋加点图这一主题，整理三系天赋的作用方向、常见定位的加点参考与自行搭配的思路，
+          内容以帮助玩家理解天赋系统为主，不提供游戏客户端或任何第三方工具。
+        </p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul class="foot-links">
+          <li><a href="#overview">三系天赋概览</a></li>
+          <li><a href="#charts">加点图参考表</a></li>
+          <li><a href="#howto">加点思路步骤</a></li>
+          <li><a href="#notes">注意事项</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>阅读提示</h4>
+        <ul class="foot-links">
+          <li>加点方案需结合版本与对局调整</li>
+          <li>旧赛季资料仅供参考思路</li>
+          <li>以游戏内天赋说明为最终依据</li>
+          <li>合理安排游戏时间</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>lols6天赋加点图 · 三系天赋加点思路与查阅指南</span>
+      <span>内容仅供学习与参考，游戏内容请以官方说明为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 导航高亮：滚动时同步当前区块
+  (function () {
+    var links = document.querySelectorAll('.nav a');
+    var sections = [];
+    links.forEach(function (a) {
+      var id = a.getAttribute('href');
+      if (id && id.charAt(0) === '#') {
+        var el = document.querySelector(id);
+        if (el) sections.push({ link: a, el: el });
+      }
+    });
+    if (!sections.length) return;
+
+    function onScroll() {
+      var pos = window.scrollY + 120;
+      var current = sections[0];
+      sections.forEach(function (s) {
+        if (s.el.offsetTop <= pos) current = s;
+      });
+      links.forEach(function (a) { a.classList.remove('active'); });
+      if (current) current.link.classList.add('active');
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
+</body>
+  </html>
