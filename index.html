@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>兽皇系列-怪兽王者影视作品专题与观看指南</title>
+<meta name="description" content="兽皇系列专题页，梳理怪兽王者题材影视作品的设定脉络、代表角色、观看顺序与常见问题，帮助影迷快速了解这一怪兽宇宙系列的核心看点与选择建议。">
+<meta name="keywords" content="兽皇系列,怪兽王者,巨兽电影,怪兽宇宙,特摄怪兽,怪兽电影推荐,兽皇系列观看顺序">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --bg:#0d1117;
+    --bg-soft:#151b24;
+    --panel:#1b232e;
+    --panel-2:#212b38;
+    --line:#2c3846;
+    --text:#e8edf3;
+    --text-dim:#9aa8b8;
+    --accent:#ff7a2f;
+    --accent-2:#ffc247;
+    --accent-soft:rgba(255,122,47,.14);
+    --radius:14px;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(1200px 500px at 80% -10%, rgba(255,122,47,.16), transparent 60%),
+      radial-gradient(900px 400px at 0% 10%, rgba(255,194,71,.08), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{width:min(1180px,92%);margin:0 auto;}
+
+  /* ---------- header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(13,17,23,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:42px;height:42px;border-radius:12px;flex:0 0 auto;
+    background:linear-gradient(140deg,var(--accent),var(--accent-2));
+    display:grid;place-items:center;
+    font-weight:800;font-size:20px;color:#1a1206;
+    box-shadow:0 6px 18px rgba(255,122,47,.35);
+  }
+  .brand-text b{display:block;font-size:18px;letter-spacing:.5px;}
+  .brand-text span{display:block;font-size:12px;color:var(--text-dim);letter-spacing:2px;}
+  .main-nav{display:flex;gap:6px;flex-wrap:wrap;}
+  .main-nav a{
+    padding:8px 14px;border-radius:999px;font-size:14px;color:var(--text-dim);
+    transition:.2s;
+  }
+  .main-nav a:hover{color:var(--text);background:var(--panel-2);}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 48px;position:relative;overflow:hidden;}
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:20px;width:420px;height:420px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,122,47,.22),transparent 65%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.35fr .9fr;gap:44px;align-items:center;
+    position:relative;z-index:1;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;letter-spacing:2px;color:var(--accent-2);
+    background:var(--accent-soft);border:1px solid rgba(255,122,47,.3);
+    padding:6px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(30px,4.6vw,50px);line-height:1.2;letter-spacing:1px;
+    margin-bottom:18px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p{color:var(--text-dim);font-size:16px;max-width:620px;margin-bottom:26px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:12px 26px;border-radius:999px;font-size:15px;
+    font-weight:600;transition:.22s;border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{
+    background:linear-gradient(120deg,var(--accent),var(--accent-2));
+    color:#1a1206;box-shadow:0 8px 24px rgba(255,122,47,.32);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,122,47,.45);}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:var(--panel);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent-2);}
+
+  .hero-card{
+    background:linear-gradient(160deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:20px;padding:26px;
+    box-shadow:var(--shadow);
+  }
+  .hero-card h3{font-size:16px;margin-bottom:16px;color:var(--accent-2);letter-spacing:1px;}
+  .hero-card ul{list-style:none;display:grid;gap:12px;}
+  .hero-card li{
+    display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--text-dim);
+  }
+  .hero-card li i{
+    flex:0 0 auto;width:22px;height:22px;border-radius:6px;margin-top:3px;
+    background:var(--accent-soft);color:var(--accent-2);
+    display:grid;place-items:center;font-size:12px;font-style:normal;font-weight:700;
+  }
+
+  /* ---------- section base ---------- */
+  section{padding:52px 0;}
+  .sec-head{margin-bottom:30px;}
+  .sec-head h2{
+    font-size:clamp(22px,2.8vw,30px);letter-spacing:.5px;margin-bottom:10px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .sec-head h2::before{
+    content:"";width:6px;height:26px;border-radius:4px;
+    background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  }
+  .sec-head p{color:var(--text-dim);font-size:15px;max-width:760px;}
+
+  /* ---------- 设定脉络 ---------- */
+  .lore-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .lore-card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;transition:.25s;
+  }
+  .lore-card:hover{transform:translateY(-4px);border-color:rgba(255,122,47,.5);}
+  .lore-card .num{
+    font-size:13px;letter-spacing:2px;color:var(--accent);font-weight:700;margin-bottom:10px;
+  }
+  .lore-card h3{font-size:18px;margin-bottom:10px;}
+  .lore-card p{font-size:14px;color:var(--text-dim);}
+
+  /* ---------- 代表角色 ---------- */
+  .beast-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .beast-card{
+    background:linear-gradient(170deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;
+    position:relative;overflow:hidden;
+  }
+  .beast-card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:3px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    opacity:.85;
+  }
+  .beast-card .tag{
+    display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;
+    background:var(--accent-soft);color:var(--accent-2);margin-bottom:12px;
+  }
+  .beast-card h3{font-size:17px;margin-bottom:8px;}
+  .beast-card p{font-size:13.5px;color:var(--text-dim);}
+
+  /* ---------- 观看顺序 ---------- */
+  .order-list{display:grid;gap:14px;counter-reset:step;}
+  .order-item{
+    display:flex;gap:18px;align-items:flex-start;
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;
+  }
+  .order-item .idx{
+    flex:0 0 auto;width:38px;height:38px;border-radius:10px;
+    background:linear-gradient(140deg,var(--accent),var(--accent-2));
+    color:#1a1206;font-weight:800;display:grid;place-items:center;font-size:16px;
+  }
+  .order-item h3{font-size:16.5px;margin-bottom:6px;}
+  .order-item p{font-size:14px;color:var(--text-dim);}
+
+  /* ---------- 看点 + 侧栏 ---------- */
+  .split{display:grid;grid-template-columns:1.6fr 1fr;gap:32px;align-items:start;}
+  .point-list{display:grid;gap:16px;}
+  .point{
+    background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:18px 20px;
+  }
+  .point h3{font-size:16px;margin-bottom:6px;}
+  .point p{font-size:14px;color:var(--text-dim);}
+
+  .side-panel{
+    background:linear-gradient(165deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+    box-shadow:var(--shadow);
+  }
+  .side-panel h3{font-size:16px;margin-bottom:16px;color:var(--accent-2);}
+  .side-panel ul{list-style:none;display:grid;gap:12px;}
+  .side-panel li{
+    font-size:14px;color:var(--text-dim);padding-bottom:12px;border-bottom:1px dashed var(--line);
+  }
+  .side-panel li:last-child{border-bottom:none;padding-bottom:0;}
+  .side-panel li b{color:var(--text);display:block;font-size:14.5px;margin-bottom:2px;}
+
+  /* ---------- 选择建议 ---------- */
+  .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .tip{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;
+  }
+  .tip h3{font-size:16px;margin-bottom:10px;display:flex;gap:8px;align-items:center;}
+  .tip h3 span{color:var(--accent);}
+  .tip p{font-size:14px;color:var(--text-dim);}
+
+  /* ---------- FAQ ---------- */
+  .faq{display:grid;gap:14px;}
+  details{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:18px 22px;transition:.2s;
+  }
+  details[open]{border-color:rgba(255,122,47,.45);background:var(--panel-2);}
+  summary{
+    cursor:pointer;font-size:15.5px;font-weight:600;list-style:none;
+    display:flex;justify-content:space-between;gap:16px;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";color:var(--accent);font-size:20px;font-weight:400;line-height:1;
+    transition:.2s;
+  }
+  details[open] summary::after{content:"–";}
+  details p{margin-top:12px;font-size:14px;color:var(--text-dim);}
+
+  /* ---------- footer ---------- */
+  .site-footer{
+    margin-top:40px;border-top:1px solid var(--line);
+    background:rgba(10,13,18,.7);padding:40px 0 26px;
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:28px;
+  }
+  .footer-grid h4{font-size:15px;margin-bottom:14px;color:var(--accent-2);}
+  .footer-grid p,.footer-grid li{font-size:13.5px;color:var(--text-dim);}
+  .footer-grid ul{list-style:none;display:grid;gap:8px;}
+  .footer-grid a:hover{color:var(--accent-2);}
+  .copyright{
+    border-top:1px solid var(--line);padding-top:18px;text-align:center;
+    font-size:13px;color:#6f7d8c;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1024px){
+    .hero-grid{grid-template-columns:1fr;gap:32px;}
+    .lore-grid{grid-template-columns:repeat(2,1fr);}
+    .beast-grid{grid-template-columns:repeat(2,1fr);}
+    .split{grid-template-columns:1fr;}
+    .tips-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .header-inner{flex-direction:column;align-items:flex-start;gap:12px;}
+    .main-nav{width:100%;}
+    .main-nav a{padding:7px 12px;font-size:13px;}
+    .hero{padding:44px 0 32px;}
+    section{padding:38px 0;}
+    .lore-grid,.beast-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .order-item{flex-direction:column;gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-mark">兽</div>
+      <div class="brand-text">
+        <b>兽皇系列</b>
+        <span>BEAST EMPEROR</span>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#lore">设定脉络</a>
+      <a href="#beasts">代表角色</a>
+      <a href="#order">观看顺序</a>
+      <a href="#point">核心看点</a>
+      <a href="#tips">选择建议</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">怪兽王者 · 系列专题</span>
+        <h1>兽皇系列：<em>巨兽王者</em>题材的设定脉络与观看入门</h1>
+        <p>如果你第一次接触“兽皇系列”，最想知道的通常是三件事：它讲的是什么、作品之间有没有先后顺序、从哪里开始看最不容易劝退。本页围绕这几个问题，梳理这一怪兽王者题材的常见设定框架、角色类型与观影思路，帮助你按自己的偏好挑选入口，而不是盲目从第一部硬啃。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#order">查看观看顺序</a>
+          <a class="btn btn-ghost" href="#lore">了解设定脉络</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h3>快速了解</h3>
+        <ul>
+          <li><i>1</i><span>题材核心：以巨型兽类王者为主角的对抗与共存叙事。</span></li>
+          <li><i>2</i><span>常见形式：特摄剧集、怪兽电影、动画与衍生设定集。</span></li>
+          <li><i>3</i><span>观看难点：不同作品世界观独立，顺序需按系列线区分。</span></li>
+          <li><i>4</i><span>入门建议：先看口碑集中的独立单元，再补主线设定。</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 设定脉络 -->
+  <section id="lore">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>兽皇系列的设定脉络</h2>
+        <p>“兽皇”并不是单一作品的固定名称，而更像是对一类以巨兽王者为核心形象的题材统称。不同系列在细节上差异很大，但通常会围绕以下几条线索展开，理解它们有助于快速进入剧情。</p>
+      </div>
+      <div class="lore-grid">
+        <article class="lore-card">
+          <div class="num">线索 01</div>
+          <h3>王者的诞生与归属</h3>
+          <p>多数作品会给巨兽设定一个“王”的身份来源：或来自远古沉睡、或来自自然异变、或由人类实验催生。身份的合法性往往决定了它在故事里是守护者还是威胁者。</p>
+        </article>
+        <article class="lore-card">
+          <div class="num">线索 02</div>
+          <h3>人类与巨兽的关系</h3>
+          <p>这是系列最常讨论的母题。人类既依赖巨兽的力量抵御更大威胁，又恐惧它失控。剧情冲突大多来自这种“合作与防范并存”的张力。</p>
+        </article>
+        <article class="lore-card">
+          <div class="num">线索 03</div>
+          <h3>兽与兽之间的位阶</h3>
+          <p>系列中通常存在明确的强弱层级，王者之下还有各类挑战者。位阶变化是推动剧情的重要动力，也是观众讨论热度最高的部分之一。</p>
+        </article>
+        <article class="lore-card">
+          <div class="num">线索 04</div>
+          <h3>形态与进化</h3>
+          <p>不少作品会安排主角兽在关键节点获得新形态或新能力。这类设定既服务于战斗场面，也承担角色成长的象征意义。</p>
+        </article>
+        <article class="lore-card">
+          <div class="num">线索 05</div>
+          <h3>世界观的时间线</h3>
+          <p>部分系列采用多时间线或重启设定，早期作品与后期作品未必直接连贯。观看前确认属于哪条时间线，能避免大量理解障碍。</p>
+        </article>
+        <article class="lore-card">
+          <div class="num">线索 06</div>
+          <h3>象征与隐喻</h3>
+          <p>巨兽题材常被用来表达对自然、科技边界与人类欲望的思考。留意这些隐喻，会让观看体验从“看打斗”升级为“看议题”。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 代表角色 -->
+  <section id="beasts">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见的角色类型</h2>
+        <p>不同系列的具体命名各异，但角色功能往往可以归入以下几类。了解类型划分，比记住每一个名字更实用。</p>
+      </div>
+      <div class="beast-grid">
+        <article class="beast-card">
+          <span class="tag">核心</span>
+          <h3>王者型巨兽</h3>
+          <p>系列的门面角色，通常拥有最强的战斗表现与最完整的成长线，也是剧情矛盾的集中点。</p>
+        </article>
+        <article class="beast-card">
+          <span class="tag">对手</span>
+          <h3>挑战者型巨兽</h3>
+          <p>以争夺位阶或领地为目的登场，负责制造高强度对抗，也常用来反衬王者的实力层次。</p>
+        </article>
+        <article class="beast-card">
+          <span class="tag">变数</span>
+          <h3>异变型巨兽</h3>
+          <p>由外力催生、形态不稳定，往往带有悲剧色彩，是探讨科技与自然边界的重要载体。</p>
+        </article>
+        <article class="beast-card">
+          <span class="tag">纽带</span>
+          <h3>人类搭档角色</h3>
+          <p>负责与巨兽建立情感连接，承担视角代入功能，也常常是推动剧情转折的关键。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观看顺序 -->
+  <section id="order">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>如何安排观看顺序</h2>
+        <p>怪兽王者题材往往横跨多部作品，直接按上映年份硬看并不一定舒服。下面是一种更稳妥的入门思路，可根据自己的时间与偏好调整。</p>
+      </div>
+      <div class="order-list">
+        <article class="order-item">
+          <div class="idx">1</div>
+          <div>
+            <h3>先确认系列归属</h3>
+            <p>先分清你想看的是哪一条系列线。同一题材下可能存在多个独立世界观，混着看容易造成设定冲突的错觉。</p>
+          </div>
+        </article>
+        <article class="order-item">
+          <div class="idx">2</div>
+          <div>
+            <h3>从独立单元入手</h3>
+            <p>优先选择世界观自洽、无需前置知识的独立作品。这类作品节奏完整，适合用来判断自己是否喜欢该题材的整体风格。</p>
+          </div>
+        </article>
+        <article class="order-item">
+          <div class="idx">3</div>
+          <div>
+            <h3>再补主线连续作品</h3>
+            <p>确认兴趣之后，按系列内部的时间线顺序补齐主线。连续作品的信息密度更高，放在后面看理解成本更低。</p>
+          </div>
+        </article>
+        <article class="order-item">
+          <div class="idx">4</div>
+          <div>
+            <h3>最后看衍生与重启</h3>
+            <p>衍生剧、重启版与设定集适合作为补充。它们往往对原作有较多改编，放在最后看不容易被先入为主影响判断。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 看点 + 侧栏 -->
+  <section id="point">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>核心看点与题材价值</h2>
+        <p>巨兽王者题材能长期保持热度，靠的不只是特效场面。以下几条是观众普遍认可的价值所在。</p>
+      </div>
+      <div class="split">
+        <div class="point-list">
+          <article class="point">
+            <h3>尺度感带来的视觉冲击</h3>
+            <p>巨兽题材最直观的吸引力来自体型差。城市、海洋、天空在巨兽面前被重新定义比例，这种尺度感是其他类型难以替代的观影体验。</p>
+          </article>
+          <article class="point">
+            <h3>非人类视角的叙事尝试</h3>
+            <p>优秀的作品会尝试从巨兽的立场去理解冲突，而非单纯把它当作威胁。这种视角切换让故事在情绪层面更有厚度。</p>
+          </article>
+          <article class="point">
+            <h3>生态与科技议题的载体</h3>
+            <p>巨兽往往被设定为自然秩序的象征，与人类的技术扩张形成对照。题材因此天然适合讨论边界、责任与共存。</p>
+          </article>
+          <article class="point">
+            <h3>长线设定的追番乐趣</h3>
+            <p>位阶变化、形态进化与世界观扩展，为长期关注该系列的观众提供了持续讨论的话题与期待感。</p>
+          </article>
+        </div>
+        <aside class="side-panel">
+          <h3>入门小提示</h3>
+          <ul>
+            <li><b>先看简介再看正片</b>确认作品属于哪条系列线，避免设定混淆。</li>
+            <li><b>不必强求全看</b>巨兽题材作品数量多，挑选口碑集中的部分即可。</li>
+            <li><b>留意版本差异</b>同一作品可能存在剪辑版与完整版，内容长度不同。</li>
+            <li><b>关注设定资料</b>设定集与官方资料能补足正片中未展开的背景。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 选择建议 -->
+  <section id="tips">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>按偏好挑选入口</h2>
+        <p>不同观众在意的东西不一样，与其问“哪部最好”，不如问“哪部最适合我”。</p>
+      </div>
+      <div class="tips-grid">
+        <article class="tip">
+          <h3><span>◆</span>喜欢强对抗场面</h3>
+          <p>优先选择以位阶争夺为主线的作品。这类作品战斗密度高，节奏紧凑，对前置设定依赖相对较小。</p>
+        </article>
+        <article class="tip">
+          <h3><span>◆</span>偏好剧情与人物</h3>
+          <p>可以选择人类角色戏份较重、有明确情感线的作品。巨兽作为背景压力存在，人物弧光会更完整。</p>
+        </article>
+        <article class="tip">
+          <h3><span>◆</span>关注世界观设定</h3>
+          <p>建议从设定资料较完整的系列线入手，按时间线顺序观看，并搭配官方设定集一起理解。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p>整理了几个初次接触该题材时最常被问到的问题，供参考。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>“兽皇系列”是指某一部具体作品吗？</summary>
+          <p>通常不是。它更像是对以巨兽王者为核心形象的一类题材的统称。不同系列、不同制作方都可能有类似定位的作品，具体所指需要结合上下文确认。</p>
+        </details>
+        <details>
+          <summary>必须按顺序看吗？</summary>
+          <p>不一定。如果作品之间属于独立世界观，单独观看没有问题。只有当作品共享同一条时间线、剧情互相承接时，才需要按顺序补齐。</p>
+        </details>
+        <details>
+          <summary>没看过前作会影响理解吗？</summary>
+          <p>取决于作品类型。独立单元影响很小；主线连续作品可能会涉及前作的角色关系与设定，建议至少先了解背景简介。</p>
+        </details>
+        <details>
+          <summary>这类题材适合什么年龄观看？</summary>
+          <p>不同作品的风格差异较大，有的偏热血冒险，有的包含较强烈的对抗与紧张情节。建议在观看前先查看该作品的分级与内容提示，再做选择。</p>
+        </details>
+        <details>
+          <summary>在哪里可以了解更完整的设定？</summary>
+          <p>官方设定集、制作方公开资料以及作品本身的片尾信息，是相对可靠的来源。网络讨论可以作为参考，但需要注意区分官方设定与观众推测。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>关于本专题</h4>
+        <p>本页围绕“兽皇系列”这一怪兽王者题材，整理设定脉络、角色类型、观看顺序与常见问题，为影迷提供结构化的入门参考。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#lore">设定脉络</a></li>
+          <li><a href="#beasts">代表角色</a></li>
+          <li><a href="#order">观看顺序</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>阅读提示</h4>
+        <ul>
+          <li>作品信息以官方公开资料为准</li>
+          <li>观看前请留意内容分级提示</li>
+          <li>合理安排观看时间</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">兽皇系列专题 · 怪兽王者题材内容整理与观看指南</div>
+  </div>
+</footer>
+
+</body>
+              </html>
